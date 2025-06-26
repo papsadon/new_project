@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Sandeep K. Yadav Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #00cec9;
+            --dark: #2d3436;
+            --light: #f5f6fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Animated background elements */
+        .bg-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-element {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.1;
+        }
+
+        /* Navigation */
+        nav {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .nav-link {
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(108, 92, 231, 0.1) 0%, rgba(0, 206, 201, 0.1) 100%);
+        }
+
+        /* Project Cards */
+        .project-container {
+            perspective: 1000px;
+        }
+
+        .project-card {
+            width: 85%;
+            min-height: 300px;
+            transition: transform 0.5s, box-shadow 0.5s;
+            transform-style: preserve-3d;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .project-card:nth-child(1) .tech-badge {
+            background-color: #f472b6;
+        }
+        .project-card:nth-child(2) .tech-badge {
+            background-color: #a78bfa;
+        }
+        .project-card:nth-child(3) .tech-badge {
+            background-color: #60a5fa;
+        }
+        .project-card:nth-child(4) .tech-badge {
+            background-color: #34d399;
+        }
+
+        /* Sliding Scroll Effect */
+        .slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .slider-item {
+            scroll-snap-align: start;
+            flex-shrink: 0;
+            width: 85%;
+            margin-right: 20px;
+        }
+
+        /* Custom scrollbar */
+        .slider::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .slider::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .slider::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+
+        /* Animated text */
+        .animated-text {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: gradientShift 8s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Section divider */
+        .wave-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .wave-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 60px;
+        }
+
+        .wave-divider .shape-fill {
+            fill: #FFFFFF;
+        }
+
+        /* Parallax effect for projects */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+                font-size: 0.75rem;
+            }
+            .project-card {
+                width: 95%;
+            }
+            .slider-item {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background animated elements -->
+    <div class="bg-elements">
+        <div class="bg-element" style="width: 300px; height: 300px; background-color: var(--primary); top: 20%; left: 10%;"></div>
+        <div class="bg-element" style="width: 400px; height: 400px; background-color: var(--secondary); bottom: 15%; right: 10%;"></div>
+        <div class="bg-element" style="width: 250px; height: 250px; background-color: var(--primary); top: 60%; left: 30%;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 shadow-sm py-4 px-6 bg-white bg-opacity-80 backdrop-blur">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <!-- Logo or Title -->
+    <div class="text-xl font-semibold">Dr. Sandeep K. Yadav</div>
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="nav-link font-medium">Home</a>
+                <a href="research.html" class="nav-link font-medium">Research</a>
+                <a href="teaching.html" class="nav-link font-medium">Teaching</a>
+                <a href="students.html" class="nav-link font-medium">Students</a>
+                <a href="awards.html" class="nav-link font-medium">Awards</a>
+                <a href="#books" class="nav-link font-medium">Books</a>
+                <a href="#journals" class="nav-link font-medium">Journals</a>
+                <a href="#collaborations" class="nav-link font-medium">Collaborations</a>
+                <a href="contact.html" class="nav-link font-medium">Contact</a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden text-2xl" id="menuToggle">
+      <!-- Heroicons hamburger -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Nav Links -->
+  <div id="mobileMenu" class="hidden flex-col space-y-4 px-6 mt-2 md:hidden">
+                <a href="#home" class="nav-link font-medium">Home</a>
+                <a href="research.html" class="nav-link font-medium">Research</a>
+                <a href="teaching.html" class="nav-link font-medium">Teaching</a>
+                <a href="students.html" class="nav-link font-medium">Students</a>
+                <a href="awards.html" class="nav-link font-medium">Awards</a>
+                <a href="#books" class="nav-link font-medium">Books</a>
+                <a href="#journals" class="nav-link font-medium">Journals</a>
+                <a href="#collaborations" class="nav-link font-medium">Collaborations</a>
+                <a href="contact.html" class="nav-link font-medium">Contact</a>
+  </div>
+  <!-- JavaScript to toggle mobile menu -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    toggleButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  });
+</script>
+</nav>
+
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero relative flex items-center justify-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="hero-content flex items-center justify-between">
+                <div class="flex-1">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                        Hi, I'm <span class="animated-text">Dr. Sandeep K. Yadav</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-gray-700">
+                        Associate Professor at IIT Jodhpur
+                    </h2>
+                    <p class="text-lg md:text-xl mb-8 text-gray-600 max-w-2xl">
+                    I am is Associate Professor in the Department of Electrical Engineering, Indian Institute of Technology, Jodhpur.
+                    I have received his PhD in Electrical Engineering from Indian Institute of Technology Kanpur in 2010. I am a recipient of SSI Young Scientist Award (2011), NI GSD Award (2012), IBM shared Research University Award (2014), and Teacher's Excellence Award (2020).
+                    My research interests include Signal Processing, Condition Monitoring, Communication systems, Image Processing, Blind Source Separation, Artificial Neural Network and Healthcare applications.                    </p>
+                    
+                </div>
+                <div class="hidden md:block flex-1">
+                    <img src="https://home.iitj.ac.in/~sy/assets/professor.jpg" 
+                         alt="Professional portrait" 
+                         class="w-80 h-82 object-cover rounded-full border-4 border-white shadow-xl floating">
+                </div>
+            </div>
+        </div>
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Research Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Research Projects</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    A showcase of my innovative research work and groundbreaking projects in artificial intelligence and data science.
+                </p>
+            </div>
+
+            <!-- Project Slider -->
+            <div class="slider">
+                <!-- Project 1 -->
+                <div class="slider-item">
+                    <div class="project-card bg-white rounded-xl overflow-hidden">
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <img src="https://home.iitj.ac.in/~sy/assets/carousel_1.jpg">
+                            </div>
+                            <p class="text-black-600 font-bold mb-6 ">
+                             Constellation Mapping FAC
+                            </p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="slider-item">
+                    <div class="project-card bg-white rounded-xl overflow-hidden">
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <img src="https://home.iitj.ac.in/~sy/assets/carousel_2.jpg">
+                            </div>
+                            <p class="text-black-600 font-bold mb-6 ">
+                             Constellation Mapping SDC
+                            </p>                                                      
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="slider-item">
+                    <div class="project-card bg-white rounded-xl overflow-hidden">
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <img src="https://home.iitj.ac.in/~sy/assets/carousel_3.jpg">
+                            </div>
+                            <p class="text-black-600 font-bold mb-6 ">
+                             Constellation Mapping MSC-FAC-SDC
+                            </p>                                                      
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="slider-item">
+                    <div class="project-card bg-white rounded-xl overflow-hidden">
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <img src="https://home.iitj.ac.in/~sy/assets/carousel_4.jpg">
+                            </div>
+                            <p class="text-black-600 font-bold mb-6 ">
+                             MIMO Test System
+                            </p>                                                      
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="slider-item">
+                    <div class="project-card bg-white rounded-xl overflow-hidden">
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <img src="https://home.iitj.ac.in/~sy/assets/carousel_5.jpg">
+                            </div>
+                            <p class="text-black-600 font-bold mb-6 ">
+                             NI ELVIS II
+                            </p>                                                      
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="slider-item">
+                    <div class="project-card bg-white rounded-xl overflow-hidden">
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <img src="https://home.iitj.ac.in/~sy/assets/carousel_6.jpg">
+                            </div>
+                            <p class="text-black-600 font-bold mb-6 ">
+                             NI ELVIS - Emona Telecommunication Bundle
+                            </p>                                                      
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="slider-item">
+                    <div class="project-card bg-white rounded-xl overflow-hidden">
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <img src="https://home.iitj.ac.in/~sy/assets/carousel_7.jpg">
+                            </div>
+                            <p class="text-black-600 font-bold mb-6 ">
+                             NI Vector Network Analyser Startup Kit
+                            </p>                                                      
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="slider-item">
+                    <div class="project-card bg-white rounded-xl overflow-hidden">
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <img src="https://home.iitj.ac.in/~sy/assets/carousel_8.jpg">
+                            </div>
+                            <p class="text-black-600 font-bold mb-6 ">
+                             NI ZigBee RF Test System
+                            </p>                                                      
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 9 -->
+                <div class="slider-item">
+                    <div class="project-card bg-white rounded-xl overflow-hidden">
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <img src="https://home.iitj.ac.in/~sy/assets/carousel_9.jpg">
+                            </div>
+                            <p class="text-black-600 font-bold mb-6 ">
+                             PXI RF Test System for GPS Receiver Test
+                            </p>                                                      
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 10 -->
+                <div class="slider-item">
+                    <div class="project-card bg-white rounded-xl overflow-hidden">
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <img src="https://home.iitj.ac.in/~sy/assets/carousel_10.jpg">
+                            </div>
+                            <p class="text-black-600 font-bold mb-6 ">
+                             RF Record and Playback System
+                            </p>                                                      
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 11 -->
+                <div class="slider-item">
+                    <div class="project-card bg-white rounded-xl overflow-hidden">
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <img src="https://home.iitj.ac.in/~sy/assets/carousel_11.jpg">
+                            </div>
+                            <p class="text-black-600 font-bold mb-6 ">
+                             E-Asha Process Flow Architecture
+                            </p>                                                      
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Highlights -->
+    <section class="bg-white :bg-gray-900">
+        <div class="container px-6 py-12 mx-auto">
+            <h1 class="text-2xl font-semibold text-gray-800 lg:text-3xl dark:text-white">Highlights</h1>
+
+            <div class="mt-8 xl:mt-16 lg:flex lg:-mx-12">
+
+                <!-- Highlights Content -->
+                <div class="flex-1 mt-8 lg:mx-12 lg:mt-0">
+                    <!-- Books Section -->
+                    <div id="books" class="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-2">
+                        <div>
+                            <p class="mt-2 text-lg tracking-wider text-black-500 uppercase font-bold dark:text-black-600">Book</p>
+                            <img class="object-cover w-72 h-auto rounded-lg h-96" 
+                                src="https://home.iitj.ac.in/~sy/assets/system_thinking_book.jpeg" 
+                                alt="System Thinking Book">
+                        </div>
+
+                        <div class="bg-gray-100 :bg-gray-800 p-6 rounded-lg shadow-lg">
+                            <h2 class="mt-4 text-xl font-semibold text-gray-800 capitalize dark:text-black-600">Systems Thinking Approach for Social Problems</h2>
+                            <p class="mt-4 text-gray-600 dark:text-black-300 text-justify">
+                                "Lecture Notes in Electrical Engineering (LNEE)" is a book series which reports the latest research and developments in Electrical Engineering, namely: LNEE publishes authored monographs and contributed volumes which present cutting edge research information as well as new perspectives on classical fields, while maintaining Springer's high standards of academic excellence. Also considered for publication are lecture materials, proceedings, and other related materials of exceptionally high quality and interest.<br>
+                                The book presents research articles in the areas of system’s modelling, complex network modelling, cyber security, sustainable systems design, health care systems, socio-economic systems, and clean and green technologies. The book can be used as a tool for further research.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Journals Section -->
+                    <div id="journals" class="grid grid-cols-1 gap-8 md:grid-cols-1 xl:grid-cols-1 mt-12">
+                        <div>
+                            <p class="mt-2 text-lg tracking-wider text-black-500 uppercase font-bold dark:text-black-600">Journals</p>
+                            <img class="object-cover w-full h-auto rounded-lg h-96" 
+                                src="https://home.iitj.ac.in/~sy/assets/journals.jpg" 
+                                alt="Journals in which research is published">
+                        </div>
+                    </div>
+
+                    <!-- Collaborations Section -->
+                    <div id="collaborations" class="grid grid-cols-1 gap-8 md:grid-cols-1 xl:grid-cols-1 mt-12">
+                        <div>
+                            <p class="mt-2 text-lg tracking-wider text-black-500 uppercase font-bold :text-black-400">Collaborations</p>
+                            <img class="object-cover w-full h-auto rounded-lg h-96" 
+                                src="https://home.iitj.ac.in/~sy/assets/collaborations.png" 
+                                alt="organizations with which I have collaborated for research">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-250 dark:bg-gray-250 py-4">
+        <div class="container mx-auto text-center text-gray-600 dark:text-black-400">
+            <p>&copy; 2024 Dr. Sandeep Kumar Yadav. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

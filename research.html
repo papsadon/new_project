@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Research - Dr. Sandeep K. Yadav</title>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.2.2/dist/cdn.min.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg fixed top-0 inset-x-0 z-10">
+        <div class="container mx-auto p-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-800">Dr. Sandeep K. Yadav</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-800 hover:text-blue-600">Home</a>
+                <a href="research.html" class="text-gray-800 hover:text-blue-600">Research</a>
+                <a href="teaching.html" class="text-gray-800 hover:text-blue-600">Teaching</a>
+                <a href="students.html" class="text-gray-800 hover:text-blue-600">Students</a>
+                <a href="awards.html" class="text-gray-800 hover:text-blue-600">Awards</a>
+                <a href="contact.html" class="text-gray-800 hover:text-blue-600">Contact</a>
+            </div>
+            <!-- Hamburger Menu -->
+            <div x-data="{ open: false }" class="md:hidden">
+                <button @click="open = !open" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <div x-show="open" @click.away="open = false" class="absolute left-0 w-full mt-2 bg-white shadow-lg z-20">
+                    <a href="index.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Home</a>
+                    <a href="research.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Research</a>
+                    <a href="teaching.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Teaching</a>
+                    <a href="students.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Students</a>
+                    <a href="awards.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Awards</a>
+                    <a href="contact.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto pt-20 flex flex-col md:flex-row">
+        <!-- Index for Mobile and Desktop -->
+        <aside class="w-full md:w-1/5 mb-6 md:mb-0 md:mr-6 bg-white shadow-lg p-6 rounded-lg">
+            <h2 class="text-lg font-semibold mb-4">Index</h2>
+            <ul class="space-y-2">
+                <li><a href="#journals" class="text-blue-600 hover:text-blue-800">Journal Publications</a></li>
+                <li><a href="#conferences" class="text-blue-600 hover:text-blue-800">Conference Publications</a></li>
+                <li>
+                    <a href="#projects" class="text-blue-600 hover:text-blue-800">Projects</a>
+                    <ul class="ml-4 space-y-1">
+                        <li><a href="#project-investigator" class="text-blue-500 hover:text-blue-600">Project Investigator</a>
+                            <ul class="ml-4 space-y-1">
+                                <li><a href="#sponsored-projects-pi" class="text-blue-400 hover:text-blue-600">Sponsored Projects</a></li>
+                                <li><a href="#consultancy-projects-pi" class="text-blue-400 hover:text-blue-600">Consultancy Projects</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#co-pi" class="text-blue-500 hover:text-blue-600">Co-PI</a>
+                            <ul class="ml-4 space-y-1">
+                                <li><a href="#sponsored-projects-co-pi" class="text-blue-400 hover:text-blue-600">Sponsored Projects</a></li>
+                                <!-- <li><a href="#consultancy-projects-co-pi" class="text-blue-400 hover:text-blue-600">Consultancy Projects</a></li> -->
+                                <li><a href="#software-developed" class="text-blue-400 hover:text-blue-600">Software Developed</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#book-chapters" class="text-blue-500 hover:text-blue-600">Books Chapters</a></li>
+                <li><a href="#book-editors" class="text-blue-500 hover:text-blue-600">Books Editors</a></li>
+                <li><a href="#copyrights" class="text-blue-500 hover:text-blue-600">Copyrights</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="w-full md:w-4/5 space-y-8">
+            <!-- Journal Papers Section -->
+            <section id="journals" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform transition-transform duration-300">
+                <h2 class="text-2xl font-bold mb-4">Journal Publications</h2>
+                <ol class="list-decimal list-inside space-y-4">
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        Preeti Meena, Himanshu Kumar, <b>Sandeep Kumar Yadav</b>, &nbsp;  
+                        <font color="#000000"><b>"A review on video summarization techniques"</b></font> &nbsp; 
+                        <font color="#008080"><em>Engineering Applications of Artificial Intelligence (Elsevier), Volume 118, 2023, 105667, ISSN 0952-1976.</em></font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        Mahmood Shaik, Abdul Gafoor Shaik, <b>Sandeep Kumar Yadav</b>, &nbsp;  
+                        <font color="#000000 "><b>“Hilbert-Huang transform and decision tree based islanding and fault recognition in renewable energy penetrated distribution system”</b></font> &nbsp; 
+                        <font color="#008080"><em>Sustainable Energy, Grids and Networks (Elsevier), Volume 30, 2022, 100606, ISSN 2352-4677</em></font>
+                    </li>         
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        Sumit Kumar Agrawal, Abhay Samant, <b>Sandeep Kumar Yadav</b>, &nbsp;  
+                        <font color="#000000 "><b>"Spectrum sensing in cognitive radio networks and metacognition for dynamic spectrum sharing between radar and communication system: A review"</b></font> &nbsp; 
+                        <font color="#008080"><em>Physical Communication (Elsevier), Volume 52, 2022, 101673, ISSN 1874-4907</em></font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        M. Shaik, <b>Sandeep Kumar Yadav</b>, and A. G. Shaik, &nbsp;  
+                        <font color="#000000 "><b>"An EMD and Decision Tree-Based Protection Algorithm for the Solar PV Integrated Radial Distribution System"</b></font> &nbsp; 
+                        <font color="#008080"><em>IEEE Transactions on Industry Applications, vol. 57, no. 3, pp. 2168-2177, May-June 2021</em></font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        Shukla, Brajesh, Jennifer Bassement, Vivek Vijay, <b>Sandeep Kumar Yadav</b>, and David Hewson, &nbsp;  
+                        <font color="#000000 "><b>"Instrumented Analysis of the Sit-to-Stand Movement for Geriatric Screening: A Systematic Review"</b></font> &nbsp; 
+                        <font color="#008080"><em>Bioengineering 7, Vol. 4, 2020 : 139.</em></font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        Jajoo, G., Kumar, Y., Kumar, Ashok Kumar, <b>Sandeep Kumar Yadav</b>, &nbsp;  
+                        <font color="#000000 "><b>“Blind Signal Modulation Recognition through Density Spread of Constellation Signature”</b></font> &nbsp; 
+                        <font color="#008080"><em>Wireless Pers Commun 114, 3137–3156 (2020). </em></font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        Bassement, J. N. C., Shukla, B. K., <b>Yadav, S. K.</b>, Vijay, V., Mathur, A., and Hewson, D. J.&nbsp;  
+                        <font color="#000000 "><b>"A Pilot Study to Detect Balance Impairment in Older Adults Using an Instrumented One-Leg Stance Test."</b></font> &nbsp; 
+                        <font color="#008080"><em>ASME. J Biomech Eng. September 2020; 142(9): 091001.</em></font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        Gaurav Jajoo, Yogesh Kumar, Ashok Kumar, and <b>Sandeep Kumar Yadav</b>, &nbsp;  
+                        <font color="#000000 "><b>"Implementation of modulation classifier over software defined radio"</b></font> &nbsp; 
+                        <font color="#008080"><em>IET Communications, Vol.4, pp. 1467-1475, 2020.</em></font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        B. K. Shukla, H. Jain, V. Vijay, <b>S. K. Yadav</b>, A. Mathur and D. J. Hewson, &nbsp;  
+                        <font color="#000000 "><b>"A Comparison of Four Approaches to Evaluate the Sit-to-Stand Movement"</b></font> &nbsp; 
+                        <font color="#008080"><em>IEEE Transactions on Neural Systems and Rehabilitation Engineering, vol. 28, no. 6, pp. 1317-1324, June 2020</em></font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        Yogesh Kumar, Manu Sheoran, Gaurav Jajoo, and <b>Sandeep Kumar Yadav</b>&nbsp;  
+                        <font color="#000000 ">&ldquo;<b>Automatic Modulation Classification based on Constellation Density using Deep Learning.</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"><em>Accepted for publication in IEEE communications letters,</em> March 2020.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        Jennifer Bassement, Brajesh Shukla, <b>Sandeep Kumar Yadav</b>, Vivek Vijay, Arvind Mathur, David J Hewson&nbsp;  
+                        <font color="#000000 ">&ldquo;<b>A Pilot Study to Detect Balance Impairment in Older Adults Using an Instrumented One-Leg Stance Test.</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"><em>Journal of Biomechanical Engineering,</em> March 2020.</font>
+                    </li>                                
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        Anuj Kumar Bharti, <b>Sandeep Kumar Yadav</b>, Snehlata Jaswal,&nbsp;  
+                        <font color="#000000 ">&ldquo;<b>Feature binding of sequentially presented stimuli in visual working memory.</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"><em>Frontiers in psychology,</em> February 2020.</font>
+                    </li>                           
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        Gaurav Jajoo, Yogesh Kumar, <b>Sandeep Kumar Yadav</b>&nbsp;  
+                        <font color="#000000 ">&ldquo;<b>Implementation of Modulation Classifier over Software Defined Radio.</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"><em>Accepted for publication in IET communications,</em> January 2020.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        Gaurav Jajoo, Yogesh Kumar, <b>Sandeep Kumar Yadav</b>&nbsp;  
+                        <font color="#000000 ">&ldquo;<b>Blind Signal PSK/QAM Recognition Using Clustering Analysis of Constellation Signature in Flat Fading Channel.</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"><em>IEEE Communications Letters , volume 23, Issue 10, Pages 1853-1856,</em> July 2019.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        Praveen Chopra, <b>Sandeep Kumar Yadav</b>&nbsp;  
+                        <font color="#000000 ">&ldquo;<b>Restricted Boltzmann machine and softmax regression for fault detection and classification.</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"><em>Complex & Intelligent Systems (Springer), volume 4, Issue 1, Pages 67-77,</em> March 2018.</font>
+                    </li>
+                     <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        Shrivishal Tripathi, Akhilesh Mohan and <b>Sandeep Kumar Yadav</b>&nbsp;  
+                        <font color="#000000 ">&ldquo;<b>Performance Study of a Fractal UWB MIMO Antenna for On-Body WBAN Applications.</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"><em>Analog Integrated Circuits and Signal Processing, volume 94, Issue 3, Pages 01-10,</em> February 2018.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        Shrivishal Tripathi, Shashank Kotyan, Ashish Upadhyay, and <b>Sandeep Kumar Yadav</b>&nbsp;  
+                        <font color="#000000 ">&ldquo;<b>Anal-ysis and Comparison of Different Fuzzy Inference Systems used in Decision Making forSecondary Users in Cognitive Radio Network.</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"><em>Wireless Personal Communication, DOI10.1007/s11277-018-6075-9, 2018</em></font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        Gaurav Jajoo, Yogesh Kumar, <b>Sandeep Kumar Yadav</b>, Bibhas Adhikari and Ashok Kumar&nbsp;  
+                        <font color="#000000 ">&ldquo;<b>Blind Signal Modulation Recognition through Clustering Analysis of Constellation Signature.</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"><em>Expert Systems with Applications, volume 90, Pages 13-22,</em> December 2017.</font>
+                    </li>                                        
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Shrivishal Tripathi, Akhilesh Mohan and <b>Sandeep Kumar Yadav</b>, &nbsp;
+                        <font color="#000000 ">&ldquo;<b>A Compact MIMO/Diversity Antenna with WLAN Band-Notch Charateristics with 
+                            Portable UWB Applications .</b>&rdquo;</font> &nbsp;
+                        <font color="#008080"><em>Electromagnetics Research, volume 77, Issue 9, Pages 29-38,</em> 2017.</font>
+                    </li>                                
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        Shrivishal Tripathi, Akhilesh Mohan and <b>Sandeep Kumar Yadav</b>&nbsp;  
+                        <font color="#000000 ">&ldquo;<b>A Performance Study of a Fractal UWB Antenna for On-Body WBAN Applications.</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"><em>Microwave Optical Technology Letters, volume 59, Issue 9, Pages 2201-2207,</em> September 2017.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        Shrivishal Tripathi, Akhilesh Mohan and <b>Sandeep Kumar Yadav</b>&nbsp;  
+                        <font color="#000000 ">&ldquo;<b>A Compact Frequency-Reconfigurable Fractal UWB Antenna using Reconfigurable Ground Plane.</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"><em>Microwave Optical Technology Letters, volume 59, issue 8, Pages 1800-1808,</em> August 2017.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Abhay Samant, <b>Sandeep Kumar Yadav</b>, Venkataramana Bardala and Shirish Mishra
+                        <font color="#000000 ">&ldquo;<b>A Cross Layer Protocol to Mitigate Effects of Radio's Linear Impairments.</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"><em>International Journal of Information and Communication Technology (IJICT)</em>, 2017</font>
+                    </li>                                
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        Akshay Jain, <b>Sandeep Kumar Yadav</b>&nbsp;  
+                        <font color="#000000 ">&ldquo;<b>Design and Analysis of Compact 108 Element Multimode Antenna Array for Massive MIMO Base Station.</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"><em>Progress In Electromagnetics Research C, Vol. 61, 179-184, </em> 2016</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        Praveen Chopra, <b>Sandeep Kumar Yadav</b>&nbsp;  
+                        <font color="#000000 ">&ldquo;<b>Fault Detection and Classification by Unsupervised Feature Extraction and Dimensionality Reduction.</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"><em>Complex & Intelligent Systems (Springer), volume 1, Issue 1-4, Pages 25-33,  </em> January 2016.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Shrivishal Tripathi, Akhilesh Mohan and <b>Sandeep Kumar Yadav</b>&nbsp;  
+                        <font color="#000000 ">&ldquo;<b>A Compact fractal UWB Antenna with Reconfigurable Band Notch Functions.</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"><em>Microwave Optical Technology Letters, volume 58, issue 3, pages 509-514,</em> March 2016.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Shrivishal Tripathi, Akhilesh Mohan and <b>Sandeep Kumar Yadav</b>&nbsp;  
+                        <font color="#000000 ">&ldquo;<b>A Compact Koch Fractal UWB MIMO Antenna with WLAN Band-Rejection</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"> <em>IEEE Antenna And Wireless Propogation Letters / Vol. 14, pp. 1565-1568, 2015 </em></font>
+                    </li>   
+                     <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Shrivishal Tripathi, Akhilesh Mohan and <b>Sandeep Kumar Yadav</b>&nbsp;  
+                        <font color="#000000 ">&ldquo;<b>A Compact Octagonal Fractal UWB MIMO Antenna With WLAN Band-Rejection</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"><em>Microwave and Optical Technology Letters / Vol. 57, No. 8, pp. 1919-1925, August 2015.</em> </font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Shrivishal Tripathi, Akhilesh Mohan and <b>Sandeep Kumar Yadav</b>&nbsp;  
+                        <font color="#000000 ">&ldquo;<b>A Compact Octagonal Shaped Fractal UWB Antenna with Sierpinski Fractal Geometry.</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"><em>Microwave and Optical Technology Letters / Vol. 57, No. 3, pp. 570-574, March 2015.</em> </font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Shrivishal Tripathi, Akhilesh Mohan and <b>Sandeep Kumar Yadav</b>&nbsp;  
+                        <font color="#000000 ">&ldquo;<b>A Compact UWB Antenna with Dual 3.5/5.5 GHz Band-Notched Characteristics</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"><em>Microwave and Optical Technology Letters / Vol. 57, No. 3, pp. 551-556, March 2015.</em> </font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Shrivishal Tripathi, Akhilesh Mohan and <b>Sandeep Kumar Yadav</b>  
+                        <font color="#000000 ">&ldquo;<b>Ultra Wideband (UWB) Antenna Using Minkowski Like Fractal Geometry</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"><em> Microwave and Optical Technology Letters / Vol. 56, No. 10, pp. 2273-2279, 2014.</em> </font>
+                    </li>    
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Shrivishal Tripathi, Akhilesh Mohan and <b>Sandeep Kumar Yadav</b> 
+                        <font color="#000000 ">&ldquo;<b>A Multi notched Octagonal Shaped Fractal UWB Antenna</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"> <em> Microwave and Optical Technology Letters / Vol. 56, No. 11, pp. 2469-2473, 2014</em> </font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Shrivishal Tripathi, Akhilesh Mohan and <b>Sandeep Kumar Yadav</b> 
+                        <font color="#000000 ">&ldquo;<b>Hexagonal Fractal UWB Antenna Using Koch Geometry With Bandwidth Enhancement.</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"><em>IET Microwaves, Antennas & Propagation, vol.8, no.15, pp.1445-1450, 2014. </em></font>
+                    </li>                                           
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Abhay Samant, <b>Sandeep Kumar Yadav</b>, Venkataramana Bardala and Shirish Mishra , &nbsp;
+                        <font color="#000000 ">&ldquo;<b>A Cross Layer Protocol to Mitigate Effects of Radios Linear Impairments
+                            </b>&rdquo;</font> &nbsp;
+                        <font color="#008080"><em>International Journal of Information and Communication Technology (IJICT),</em> 2017.
+                            </font>2014.
+                    </li>                                
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        <b>S. K. Yadav</b>, K. Tyagi, B. Shah, P. K. Kalra
+                        <font color="#000000 ">&ldquo;<b>Acoustic based conditon monitoring of Internal Combustion Engine using FFT and correlation based approach.</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"> <em>IEEE Transaction on Instrumentation and Measurement, Vol. 60, No. 4, pp. 1217-1226,</em> 2011.</font>  
+                    </li>
+                </ol>
+            </section>
+
+            <!-- Conference Papers Section -->
+            <section id="conferences" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform transition-transform duration-300">
+                <h2 class="text-2xl font-bold mb-4">Conference Papers</h2>
+                <ol class="list-decimal list-inside space-y-4">
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Shukla, B.K., <b>Yadav, S. K.</b>, V. Vijay, A. Mathur, and D.J. Hewson</b>&nbsp;  
+                         <font color="#000000 ">&ldquo;<b>Can the Five-Times Sit-to-Stand Test be used to assess both muscle strength and physical performance when detecting sarcopenia?</b>&rdquo;</font> &nbsp; 
+                         <font color="#008080">10th International Conference on Frailty and Sarcopenia Research. Toulouse, France, 11-13 March 2020</em>.</font>
+                     </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                         Shukla, B.K., <b>Yadav, S. K.</b>, V. Vijay, A. Mathur, and D.J. Hewson</b>&nbsp;  
+                         <font color="#000000 ">&ldquo;<b>Development of an instrumented chair to measure sit-to-stand velocity in older people</b>&rdquo;</font> &nbsp; 
+                         <font color="#008080">Gericon 2019. Vellore, Tamil Nadu, 6-7 December 2019</em>.</font>
+                     </li>
+                     <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                         Hewson, D.J., B.K. Shukla, J.N.C. Bassement, <b>Yadav, S. K.</b>, V. Vijay, and A. Mathur&nbsp;  
+                         <font color="#000000 ">&ldquo;<b>Development of Indian-specific thresholds for fall screening tests</b>&rdquo;</font> &nbsp; 
+                         <font color="#008080">Gericon 2019. Vellore, Tamil Nadu, 6-7 December 2019</em>.</font>
+                     </li>
+                     <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                         Mahmood Shaik, Abdul Gafoor Shaik, <b>Sandeep Kumar Yadav</b>&nbsp;  
+                         <font color="#000000 ">&ldquo;<b>S-Transform Based Protection Scheme for Distribution System Integrated with Solar Power Plant</b>&rdquo;</font> &nbsp; 
+                         <font color="#008080">2019 2nd International Conference on Smart Grid and Renewable Energy (SGRE), Doha, Qatar, 19-21 Nov. 2019</em>.</font>
+                     </li>
+                     <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Anuj Kumar Bharti, <b>Sandeep Kumar Yadav</b>, Snehlata Jaswal,&nbsp;
+                        <font color="#000000 ">&ldquo;<b>Location modulates the effect of simultaneous but not sequential presentation on feature binding: An fMRI study</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080">In Proc: 35th annual meeting of the International Society for Psychophysics (Fechner Day-2019), 30 Oct-2 Nov 2019, Antalya, Turkey.</em>.</font>
+                     </li>
+                     <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                         Mahmood Shaik, <b>Sandeep Kumar Yadav </b>, Abdul Gafoor Shaik</b>&nbsp;  
+                         <font color="#000000 ">&ldquo;<b>Distribution Feeder Protection Using Uncorrelated Symmetrical Dot Patterns</b>&rdquo;</font> &nbsp; 
+                         <font color="#008080">TENCON 2019 - 2019 IEEE Region 10 Conference (TENCON), Kochi, India, 17-20 Oct. 2019</em>.</font>
+                     </li>
+                     <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                         Gaurav Jajoo, Yogesh Kumar Yadav, and <b>Sandeep Kumar Yadav</b>&nbsp;  
+                         <font color="#000000 ">&ldquo;<b>Blind Signal Digital Modulation Classification through k-medoids Clustering</b>&rdquo;</font> &nbsp; 
+                         <font color="#008080">2018 IEEE International Conference on Advanced Networks and Telecommunications Systems (ANTS), December 2018 at Indore</em>.</font>
+                     </li>
+                     <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                         Shukla, B.K., <b>Yadav, S. K.</b>, V. Vijay, J.N.C. Bassement, A. Mathur, and D.J. Hewson &nbsp;  
+                         <font color="#000000 ">&ldquo;<b>Detecting sarcopenia using an instrumented chair</b>&rdquo;</font> &nbsp; 
+                         <font color="#008080">Gericon 2018. Kota, Rajasthan, 7-9 December 2018</em>.</font>
+                     </li>
+                     <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                         Hewson, D.J., B.K. Shukla, <b>Yadav, S. K.</b>, V. Vijay, J.N.C. Bassement, and A. Mathur &nbsp;  
+                         <font color="#000000 ">&ldquo;<b>Gerontechnology: Case study using an intelligent bathroom scale</b>&rdquo;</font> &nbsp; 
+                         <font color="#008080">Gericon 2018. Kota, Rajasthan, 7-9 December 2018</em>.</font>
+                     </li>
+                     <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                         Mahmood Shaik, <b>Sandeep Kumar Yadav </b>, Abdul Gafoor Shaik</b>&nbsp;  
+                         <font color="#000000 ">&ldquo;<b>An EMD Based Protection Scheme for Distribution System</b>&rdquo;</font> &nbsp; 
+                         <font color="#008080">2nd IEEE International Conference on Power Electronics, Intelligent Control and Energy Systems (ICPEICES), Delhi, India, 22-24 Oct. 2018</em>.</font>
+                     </li>
+                     <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                         Yogesh Kumar Yadav, Gaurav Jajoo, and <b>Sandeep Kumar Yadav</b>&nbsp;  
+                         <font color="#000000 ">&ldquo;<b>Modulation scheme detection of blind signal using constellation graphical representation</b>&rdquo;</font> &nbsp; 
+                         <font color="#008080">IEEE-International Conference on Computer, Communications and Electronics (Comptelix), Jaipur, India 01-02 July 2017</em>.</font>
+                     </li>
+                     <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                         R Shukla, <b>Sandeep Kumar Yadav</b>&nbsp;  
+                         <font color="#000000 ">&ldquo;<b>A Practical Approach on Frequency Prediction and Optimum HF Antenna Deployment</b>&rdquo;</font> &nbsp; 
+                         <font color="#008080">IEEE IAW-2017, Pune, India 05-09 Jun 2017</em>.</font>
+                     </li>
+                     <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                        Shukla, B.K., V. Vijay,<b>Yadav, S. K.</b>, J.N.C. Bassement, and D.J. Hewson &nbsp;  
+                         <font color="#000000 ">&ldquo;<b>A factor model for predicting muscle power in older people</b>&rdquo;</font>&nbsp; 
+                         <font color="#008080">iCOMET 2017 - International Conference on Computational and Mathematical Methods in Engineering and Technology. Melbourne, Australia, 18-20 December.</font>
+                     </li>
+                     <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                       Shukla, B.K., <b>Yadav, S. K.</b>, V. Vijay, J.N.C. Bassement, A. Mathur, and D.J. Hewson&nbsp;  
+                         <font color="#000000 ">&ldquo;<b>Older people with fear of falling can be identified using a modified bathroom scale</b>&rdquo;</font>&nbsp; 
+                         <font color="#008080">Gericon 2017. New Delhi, India, 16-17 December.</font>
+                     </li>
+                     <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                       Hewson, D.J., B.K. Shukla, <b>Yadav, S. K.</b>, V. Vijay, and J.N.C. Bassement&nbsp;  
+                         <font color="#000000 ">&ldquo;<b>Can technology be used to accurately detect the frailty phenotype? </b>&rdquo;</font>&nbsp; 
+                         <font color="#008080">Gericon 2017. New Delhi, India, 16-17 December.</font>
+                     </li>
+                     <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                       Burton, C, BK Shukla, <b>Yadav, S. K.</b>, V Vijay, and DJ Hewson.&nbsp;  
+                         <font color="#000000 ">&ldquo;<b>The Five-Times Sit-to-Stand test can predict muscle power in healthy adults. </b>&rdquo;</font>&nbsp; 
+                         <font color="#008080">7th International Conference on Frailty and Sarcopenia Research. Barcelona, Spain, 27-29 April.</font>
+                     </li>
+                     <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Anuj Kumar Bharti, <b>Sandeep Kumar Yadav</b>, Snehlata Jaswal,&nbsp;  
+                         <font color="#000000 ">&ldquo;<b>Remembering sequences in Visual Working Memory Differences between features and their bindings</b>&rdquo;</font> &nbsp; 
+                         <font color="#008080">In Proc: 4th International workshop on Attentive Listener in Visual World(AttLis-2017), 3-4 Apr 2017, Goa, India.</em>.</font>
+                     </li>
+                     <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300"> 
+                         Praveen Chopra, <b>Sandeep Kumar Yadav</b>&nbsp;  
+                         <font color="#000000 ">&ldquo;<b>PCA and Feature Correlation for Fault Detection and Classification.</b>&rdquo;</font>&nbsp; 
+                         <font color="#008080">IEEE Recent Advances in Intelligent Computational Systems (RAICS), 10-12 Dec 2015, Trivandrum, Kerala, India.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">     
+                         Jennifer Bassement, <b>Sandeep Kumar Yadav</b>,  Arvind Mathur, David Hewson&nbsp;  
+                         <font color="#000000 ">&ldquo;<b>Does functional geriatric screening to identify older people at risk of falling need to be culturally specific?.</b>&rdquo;</font> &nbsp;
+                         <font color="#008080">3rd International Congress on Gerontology and Geriatric Medicine, 27-29 November 2015, New Delhi.</font> 
+                     </li>
+                     <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">     
+                         Abhay Samant, Venkataramana Badarla, <b>Sandeep Kumar Yadav</b>,Mythili Vutukuru, Paul Khanna and Erik Luther &nbsp;  
+                         <font color="#000000 ">&ldquo;<b>Latency and Cost Requirements of Systems for Teaching MAC Protocols.</b>&rdquo;</font> &nbsp;
+                         <font color="#008080">Twenty First National Conference on Communications, Feburary 2015.</font> 
+                     </li>
+                     <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Shrivishal Tripathi, Akhilesh Mohan and <b>Sandeep Kumar Yadav</b>&nbsp;
+                        <font color="#000000 ">&ldquo;<b>"A Compact Octagonal shaped Fractal UWB MIMO Antenna With 5.5 GHz Band-notch
+                                Characteristics</b>&rdquo;</font> &nbsp;
+                        <font color="#008080">IEEE IMarc, 17-19 December 2014 at Bengaluru</em>.</font>
+                    </li>                    
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        A. Gafoor , <b>Sandeep Kumar Yadav</b>, T Vamshi Krishna and Pasunoori Prashanth&nbsp;
+                        <font color="#000000 ">&ldquo;<b>Transmission Line Protection Scheme Using Wavelet Based Alienation
+                                Coefficients</b>&rdquo;</font> &nbsp;
+                        <font color="#008080">IEEE International Power and Energy Conference (PECON), 2014 on 1-3 December 2014 at Kuching
+                            Sarawak, Malaysia</font>
+                    </li>                    
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Shrivishal Tripathi, Akhilesh Mohan and <b>Sandeep Kumar Yadav</b>&nbsp;
+                        <font color="#000000 ">&ldquo;<b>A Compact Dual Band-Notched Fractal Antenna for UWB Application</b>&rdquo;</font>
+                        &nbsp;
+                        <font color="#008080">Asia-Pacific Microwave Conference (APMC), 2014, <!--IEEE International Conference on, pp.,-->
+                            4-7 November 2014.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Shrivishal Tripathi, <b>Sandeep Kumar Yadav</b>, Akhilesh Mohan&nbsp;
+                        <font color="#000000 ">&ldquo;<b>Fractal UWB Antenna With Dual 3.5/5.5 GHz Notched Band.</b>&rdquo;</font> &nbsp;
+                        <font color="#008080">IEEE Indian Antenna Week, 26-30 May, 2014.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Shrivishal Tripathi, Dr. Akhilesh Mohan, <b>Dr. Sandeep Kumar Yadav</b>, Dr. Vivek Vijay and Dr. Ambesh Dixit&nbsp;
+                        <font color="#000000 ">&ldquo;<b>A Novel Multi band Notched Octagonal Shaped Fractal UWB Antenna.</b>&rdquo;</font>
+                        &nbsp;
+                        <font color="#008080">ICSC, 179-183, 2013, IEEE.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Shrivishal Tripathi, Dr. Akhilesh Mohan, <b>Dr. Sandeep Kumar Yadav</b>, Dr. Vivek Vijay and Dr. Ambesh Dixit&nbsp;
+                        <font color="#000000 ">&ldquo;<b>Hexagonal Shaped Fractal UWB Antenna.</b>&rdquo;</font> &nbsp;
+                        <font color="#008080">AEMC , 18-20, 2013, IEEE.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Hewson D, J Jaber, R Chkeir, A Hammoud, Gupta D, Bassement J, Vermeulen J, <b>Yadav, S. K.</b>, de Witte L, Duchene
+                        J.S.&nbsp;
+                        <font color="#000000 ">&ldquo;<b>Development of a monitoring system for physical frailty in independent
+                                elderly.</b>&rdquo;</font> &nbsp;
+                        <font color="#008080">EMBC, 13799794 , 6215 - 6218 , 2013, IEEE.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        <b>S. K. Yadav</b> and P.K. Kalra&nbsp;
+                        <font color="#000000 ">&ldquo;<b>Automatic fault diagnosis of internal combustion engine based on spectrogram and
+                                artificial neural network.</b>&rdquo;</font> &nbsp;
+                        <font color="#008080">Proceedings of the 10th WSEAS International Conference on Robotics, Control and manufacturing
+                            Technology, pp. 101-107, Hang Hua, China, 2010</font>
+                    </li>                    
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        <b>S. K. Yadav,</b>, K.Tyagi, B.Shah, P.K Kalra&nbsp;
+                        <font color="#000000 ">&ldquo;<b>AN FFT and correlation based approach for Engine condition monitoring.</b>&rdquo;
+                        </font> &nbsp;
+                        <font color="#008080">International Conference on Information and Communication Technology(IJcICT), IIMT
+                            Bhubaneshwar, 60(4), 1217-1226, 2010.</font>
+                    </li>                    
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        <b>S. K. Yadav</b>, P.K Kalra&nbsp;
+                        <font color="#000000 ">&ldquo;<b>Internal Combustion Engine Fault Diagnosis using Empirical Mode
+                                Decomposition.</b>&rdquo;</font> &nbsp;
+                        <font color="#008080">IEEE International Symposium on Image and Signal Processing and Analysis(ISPA-2009), Salzburg,
+                            Austria,September 16-18, 2009.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        <b>S. K. Yadav</b>, P.sankar, P.K Kalra&nbsp;
+                        <font color="#000000 ">&ldquo;<b>Feature Extraction based on EMD and Morlet Wavelet and its application for
+                                Condition Monitoring of Internal Combustion Engine using Neural Network.</b>&rdquo;</font> &nbsp;
+                        <font color="#008080">IEEE International Symposium on Image and Signal Processing and Analysis (ISPA-2009),
+                            Salzburg, Austria, September 16-18, 2009.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        <b>S. K. Yadav</b>, V. Singh, N.K Singh, P.K Kalra&nbsp;
+                        <font color="#000000 ">&ldquo;<b>Color Image Compression using Block-based Independent Component
+                                Analysis.</b>&rdquo;</font> &nbsp;
+                        <font color="#008080">IEEE International Symposium on Image and Signal Processing and Analysis (ISPA-2007),
+                            Istanbul, Turkey, 2007.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Shukla Brajesh, Jain Hiteshi, Vijay Vivek, <b>Yadav Sandeep Kumar</b>, Hewson David, &nbsp;
+                        <font color="#000000 ">&ldquo;<b><b>A Fusion-Based Approach to Identify the Phases of the Sit-to-Stand Test in Older
+                                    People</b>,</b>&rdquo;</font> &nbsp;
+                        <font color="#008080">The National Conference on Communications (NCC) - Biomedical track, 2020.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Rajesh Shukla, <b>Sandeep kumar Yadav</b>, and Soumava Mukherjee</b>&nbsp;
+                        <font color="#000000 ">&ldquo;<b>Frequency Tunable Inverted-V HF Dipole Antenna by Channel Extension
+                                Technique</b>&rdquo;</font> &nbsp;
+                        <font color="#008080">IEEE Indian Conference on Antenna & Propagation, IEEE InCAP-2019, Ahmedabad 19-22 December
+                            2019</em>.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Bassement, J, B.K. Shukla, <b>S.K. Yadav</b>, V. Vijay, A. Mathur, and D.J. Hewson, &nbsp;
+                        <font color="#000000 ">&ldquo;<b><b>Frailty incidence in an indian community-qwelling population</b>,</b>&rdquo;
+                        </font> &nbsp;
+                        <font color="#008080">Indian Aging Conference, September 2016.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Sandeep Yadav, Jennifer Bassement, Brajesh Shukla, Vivek Vijayvargia, Mathur and David Hewson &nbsp;
+                        <font color="#000000 ">&ldquo;<b><b>Prevalence of Frailty in an Indian Community-Dwelling Population</b>,</b>&rdquo;
+                        </font> &nbsp;
+                        <font color="#008080">Indian Aging Conference, September 2016.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Sandeep Yadav, Jennifer Bassement, Brajesh Shukla, Vivek Vijayvargia, Mathur and David Hewson &nbsp;
+                        <font color="#000000 ">&ldquo;<b><b>Screening for Fall-Risk in an Indian Community-Dwelling
+                                    Population</b>,</b>&rdquo;</font> &nbsp;
+                        <font color="#008080">Indian Aging Conference, September 2016.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Bassement, J, B.K. Shukla, <b>S.K. Yadav</b>, V. Vijay, A. Mathur, and D.J. Hewson, &nbsp;
+                        <font color="#000000 ">&ldquo;<b>Screening for Fall-Risk in an Indian Community-Dwelling Population</b>&rdquo;
+                        </font> &nbsp;
+                        <font color="#008080"> Indian Aging Conference, September 2016.</font>
+                    </li>
+                    
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        Shrivishal Tripathi, <b>Sandeep Kumar Yadav</b>, Akhilesh Mohan&nbsp;
+                        <font color="#000000 ">&ldquo;<b>A Compact UWB Antenna with WLAN band notch characteristics using Fractal
+                                Geometry</b>&rdquo;</font> &nbsp;
+                        <font color="#008080">CALCON, 2014 national Conference on, pp., 7-8 November 2014.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        P.Sensarma, P.Bajpai and <b>S. K. Yadav</b>&nbsp;
+                        <font color="#000000 ">&ldquo;<b>The Instantaneous Reactive Power Approach for Harmonic Extraction Pitfalls and
+                                Safegaurds.</b>&rdquo;</font> &nbsp;
+                        <font color="#008080"> NPEC-2003 Conf. Record, National Power Electronics Conference (NPEC-2003), Oct 16-17, 2003,
+                            Mumbai. </font> <br>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform transition-transform duration-300">
+                <h2 class="text-2xl font-bold mb-4">Projects</h2>
+
+                <!-- Project Investigator Sub-Section -->
+                <div id="project-investigator" class="mt-8">
+                    <h3 class="text-xl font-bold mb-4">Project Investigator</h3>
+
+                    <!-- Sponsored Projects under Project Investigator -->
+                    <section id="sponsored-projects-pi" class="ml-6 bg-gray-50 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <h4 class="text-lg font-bold mb-2">Sponsored Projects</h4>
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li class="p-2 hover:bg-gray-100 rounded-lg"><b>Development of Cognitive Cyber-Physical System (C2PS) testbed</b>, C3iHUB, IIT Kanpur - Ongoing </li>
+                            <li class="p-2 hover:bg-gray-100 rounded-lg"><b>Algorithms for Blind Signal Detection and Demodulation</b>, Funded by DRDO : Completed  (2015-2018)</li>
+                            <li class="p-2 hover:bg-gray-100 rounded-lg"><b>Transforming Health Care through Technology Innovation</b>, Funded by IBM : Completed</li>
+                            <li class="p-2 hover:bg-gray-100 rounded-lg"><a href="http://unicef.iitj.ac.in" style="text-decoration: none;" target="_blank"> <b>Reproductive child health care(&#2312;-ASHA)</b>, Funded by UNICEF Jaipur </a> : Completed</li>
+                        </ol>
+                    </section>
+
+                    <!-- Consultancy Projects under Project Investigator -->
+                    <section id="consultancy-projects-pi" class="ml-6 mt-4 bg-gray-50 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <h4 class="text-lg font-bold mb-2">Consultancy Projects</h4>
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li class="p-2 hover:bg-gray-100 rounded-lg"><b>AI/ML, IoT, and Wireless Practice Adviosry, Spanidea Systems Pvt. Ltd. Bengaluru</b>: Ongoing</li>
+                            <li class="p-2 hover:bg-gray-100 rounded-lg"><b>AI/ML, IoT, and Wireless Practice Adviosry, Spanidea Systems Pvt. Ltd. Bengaluru</b>: Completed</li>
+                            <li class="p-2 hover:bg-gray-100 rounded-lg"><b>Development of DRM/DRM+ Standards, Funded by NI India</b>: Completed</li>
+                            <li class="p-2 hover:bg-gray-100 rounded-lg"><b>Link Budget, Funded by WESEE</b>: Completed</li>
+                            <li class="p-2 hover:bg-gray-100 rounded-lg"><b>Carrier frequency offset, Funded by DRDO</b> : Completed</li>
+                            <li class="p-2 hover:bg-gray-100 rounded-lg"><b>NI sensor and network lab, Funded by NI INDIA</b>: Completed</li>
+                            <li class="p-2 hover:bg-gray-100 rounded-lg"><b>Cross MAC & PSY Layer Research, Funded by NI INDIA</b>: Completed</li>
+                            <li class="p-2 hover:bg-gray-100 rounded-lg"><b>Development of Intelligent & Cellular Communication Courses, Funded by NI INDIA</b>: Completed</li>
+                        </ol>
+                    </section>
+                </div>
+
+                <!-- Co-Project Investigator Sub-Section -->
+                <div id="co-pi" class="mt-8">
+                    <h3 class="text-xl font-bold mb-4">Co-Project Investigator</h3>
+                    
+                    <!-- Sponsored Projects under Co-PI -->
+                    <section id="sponsored-projects-co-pi" class="ml-6 bg-gray-50 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <h4 class="text-lg font-bold mb-2">Sponsored Projects</h4>
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li class="p-2 hover:bg-gray-100 rounded-lg"><b>Seeing through partial occlusion</b>, TIH IIT Jodhpur, Ongoing</li>
+                            <li class="p-2 hover:bg-gray-100 rounded-lg"><b>Validation of the Jodhpur Instrumented Kursi against dual energy X-ray absorptiometry to diagnose sarcopenia in older Indians</b>, ICMR, 2020</li>
+                            <li class="p-2 hover:bg-gray-100 rounded-lg"><b>Energy Efficient Technologies for Smart Building</b>, Indo-US Science & Technology Forum, Department of Science & Technology (DST), Government of India (2016-2019)     (Project Investigator : Dr. Deepak Fulwani)</li>
+                            <li class="p-2 hover:bg-gray-100 rounded-lg"><b>Development of low cost mobile Robots</b>, Funded by MHRD 23-03-2011 to 30-09-2013     (Project Investigator : Dr. Swagat Kumar)</li>
+                        </ol>
+                    </section>
+
+                    <!-- Software Developed under Co-PI -->
+                    <section id="software-developed" class="ml-6 bg-gray-50 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <h4 class="text-lg font-bold mb-2">Software Developed</h4>
+                        <ol class="list-decimal list-inside space-y-6">
+                            <!-- List Item 1 -->
+                            <li class="p-2 font-bold hover:bg-gray-100 rounded-lg">DRM/DRM+ Transmitter</li>
+                            <div class="mt-2 bg-white bg-opacity-50 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:bg-opacity-75">
+                                <p class="text-justify">
+                                    Digital Radio Mondiale is a standard developed for digital audio broadcasting technologies. It's an openly standardized digital broadcasting system for all broadcasting frequencies, including LW, MW, SW, band I, II (FM band) and III(above 30 MHz). This technology is used to work over the AM broadcasting, especially shortwave. DRM is capable to fit more channels than AM of better quality & at low power utilization into a given amount of bandwidth. Development of DRM revolutionized the broadcasting technology & opens a new door to utilize the limited available bandwidth. Efficient use of bandwidth is possible due to availability of modern compression techniques & low cost processing through computers. That is the main principle behind the DRM.
+                                </p>
+                            </div>
+
+                            <!-- List Item 2 -->
+                            <li class="p-2 font-bold hover:bg-gray-100 rounded-lg">ई-ASHA</li>
+                            <div class="mt-2 bg-white bg-opacity-50 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:bg-opacity-75">
+                                <p class="text-justify">
+                                    IIT Jodhpur in partnership with UNICEF Jaipur has developed a software package for android platform which can provide solutions and can help in improving quality of home based Antenatal counselling,Postnatal Care,Childhood care through integrating all these in one device weighing less than 400gms and easy and is also low cost which can be given ASHA/ANMs.It is envisaged that the package will be developed in such a way that the ANC, Natal and Postnatal care modules are integrated and also data can be transferred automatically to a centralised server( if it is not connected to the internet, then it stores a local copy and waits to upload till it is connected to the data network, this is a useful feature for rural India, where in some cases data networks on mobile networks may not be available) from where an SMS(Text Message) can be delivered two days prior to next schedule visit both to the mothers and to the frontline functionaries.
+                                    <br/>
+                                    <a href="http://unicef.iitj.ac.in" target="_blank" class="underline text-blue-600">View website</a>
+                                </p>
+                            </div>
+
+                            <!-- List Item 3 -->
+                            <li class="p-2 font-bold hover:bg-gray-100 rounded-lg">Link Budget Estimation for ship-to-ship communication</li>
+                            <div class="mt-2 bg-white bg-opacity-50 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:bg-opacity-75">
+                                <p class="text-justify">
+                                    The purpose of this research is to analyze, model and simulate the possible communication scenerios that occur on naval ships by exploring the possible solutions/ models. A traditional link budget for narrowband systems based on the Friis transmission formula, does not accurately predicts the received signal’s power in naval systems. The various models was incorporated for inputs such as frequency. Ship transmitters equipments, antenna Characteristic, Cables alternuation parameters, propagation models, and possible dynamics of platforms.
+                                </p>
+                            </div>
+
+                            <!-- List Item 4 -->
+                            <li class="p-2 font-bold hover:bg-gray-100 rounded-lg">Transforming Health Care through Technology Innovation</li>
+                            <div class="mt-2 bg-white bg-opacity-50 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:bg-opacity-75">
+                                <p class="text-justify">
+                                    IIT Jodhpur in partnership with IBM India has developed a software package for all mobile platforms like Android, Windows, Blackberry and IOS (Hybrid Application) which can provide solutions and can help in improving quality of home based Antenatal counselling,Postnatal Care,Childhood care through integrating all these in one device weighing less than 400gms and easy and is also low cost which can be given ASHA/ANMs.It is envisaged that the package will be developed in such a way that the ANC, Natal and Postnatal care modules are integrated and also data can be transferred automatically to a centralised server.
+                                </p>
+                            </div>
+                        </ol>
+                    </section>
+
+
+                </div>
+            </section>
+
+            <!-- Book Chapters Section -->
+            <section id="book-chapters" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform transition-transform duration-300">
+                <h2 class="text-2xl font-bold mb-4">Book Chapters</h2>
+                <ol class="list-decimal list-inside space-y-4">
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        <b>Sandeep Kumar Yadav</b>, Vrijendra Singh, P. K. Kalra: &nbsp; 
+                        <b>Condition Monitoring and Fault Diagnosis Using Intelligent Techniques</b> <font color="#008080"><em> Integration of Swarm Intelligence and Artificial Neural Network, June 2011, </em>Pages 137-156.</font>
+                    </li>
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        <b>Sandeep Kumar Yadav</b>, P.K Kalra: &nbsp;
+                        <b>Condition Monitoring of Internal Combustion Engine Using EMD and HMM</b> <font color="#008080"> <em>Intelligent Autonomous Systems (Springer), 2010, SCI 275, </em>Pages 167-185.</font>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- Book Editors Section -->
+            <section id="book-editors" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform transition-transform duration-300">
+                <h2 class="text-2xl font-bold mb-4">Book Editors</h2>
+                <ol class="list-decimal list-inside space-y-4">
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        <b>Sandeep Kumar Yadav</b>, Vivek Vijay, Bhibhas Adhikari, Harnipriya Seshadri, Deepak Kumar Fulwani;  
+                        <font color="#000000 ">&ldquo;<b>System Thinking Approach for Social Problems</b>&rdquo;</font>&nbsp;
+                        <font color="#008080"> <em>Springer, 2014, Lecture Notes in Electrical Engineering 327.</em></font>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- Copyrights Section -->
+            <section id="copyrights" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform transition-transform duration-300">
+                <h2 class="text-2xl font-bold mb-4">Copyrights</h2>
+                <ol class="list-decimal list-inside space-y-4">
+                    <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                        <b>Sandeep Kumar Yadav</b>, Gaurav Jajoo, Yogesh Kumar &nbsp;  
+                        <font color="#000000 ">&ldquo;<b>Algorithm for Blind Signal Modulation Recognition.</b>&rdquo;</font> &nbsp; 
+                        <font color="#008080"><em>Copyright filed,</em> January 2020.</font>
+                    </li>
+                </ol>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-12 bg-gray-200 dark:bg-gray-800 py-4">
+        <div class="container mx-auto text-center text-gray-600 dark:text-gray-400">
+            <p>&copy; 2024 Dr. Sandeep Kumar Yadav. All rights reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

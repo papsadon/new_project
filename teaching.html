@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Teaching - Dr. Sandeep K. Yadav</title>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.2.2/dist/cdn.min.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg fixed top-0 inset-x-0 z-10">
+        <div class="container mx-auto p-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-800">Dr. Sandeep K. Yadav</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-800 hover:text-blue-600">Home</a>
+                <a href="research.html" class="text-gray-800 hover:text-blue-600">Research</a>
+                <a href="teaching.html" class="text-gray-800 hover:text-blue-600">Teaching</a>
+                <a href="students.html" class="text-gray-800 hover:text-blue-600">Students</a>
+                <a href="awards.html" class="text-gray-800 hover:text-blue-600">Awards</a>
+                <a href="contact.html" class="text-gray-800 hover:text-blue-600">Contact</a>
+            </div>
+            <!-- Hamburger Menu -->
+            <div x-data="{ open: false }" class="md:hidden">
+                <button @click="open = !open" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <div x-show="open" @click.away="open = false" class="absolute left-0 w-full mt-2 bg-white shadow-lg z-20">
+                    <a href="index.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Home</a>
+                    <a href="research.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Research</a>
+                    <a href="teaching.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Teaching</a>
+                    <a href="students.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Students</a>
+                    <a href="awards.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Awards</a>
+                    <a href="contact.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container mx-auto p-4 mt-16">
+        <section id="courses-offered" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform transition-transform duration-300">
+            <h2 class="text-2xl font-bold mb-4">Teaching & Admin Responsibilities</h2>
+
+            <!-- Admin Responsibilities -->
+            <section class="container px-4 mx-auto mt-12">
+                <h2 class="text-xl font-semibold mt-6 mb-2">Admin Responsibilities</h2>
+            
+                <div class="flex flex-col mt-6">
+                    <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                        <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+                            <div class="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg">
+                                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                                    <thead class="bg-gray-50 dark:bg-gray-800">
+                                        <tr>
+                                            <th scope="col" class="py-3.5 px-4 text-sm font-normal text-left text-gray-500 dark:text-gray-400">SNo.</th>
+                                            <th scope="col" class="py-3.5 px-4 text-sm font-normal text-left text-gray-500 dark:text-gray-400">Responsibilities</th>
+                                            <th scope="col" class="py-3.5 px-4 text-sm font-normal text-left text-gray-500 dark:text-gray-400">Duration</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-900 dark:divide-gray-700">
+                                        <tr>
+                                            <td class="py-4 px-4 text-sm font-medium text-gray-900 dark:text-white">1</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Chairman JEE</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Sep 2020 - Aug 2023</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-4 px-4 text-sm font-medium text-gray-900 dark:text-white">2</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Chairman, UG Admission</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Sep 2021 - Aug 2023</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-4 px-4 text-sm font-medium text-gray-900 dark:text-white">3</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Chairman PG Admission</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Sep 2021 - Aug 2023</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-4 px-4 text-sm font-medium text-gray-900 dark:text-white">4</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Chairman UG Committee</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Jul 2021 - Aug 2022</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-4 px-4 text-sm font-medium text-gray-900 dark:text-white">5</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Member, DRC</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Dec 2020 - Nov 2022</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-4 px-4 text-sm font-medium text-gray-900 dark:text-white">6</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Chairman, LDC</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Dec 2020 - Nov 2022</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-4 px-4 text-sm font-medium text-gray-900 dark:text-white">7</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Chairman, M.Tech Admission Committee</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Jul 2020 - Jul 2021</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-4 px-4 text-sm font-medium text-gray-900 dark:text-white">8</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Department Vision Formulation Committee</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Jul 2020 - Jul 2021</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-4 px-4 text-sm font-medium text-gray-900 dark:text-white">9</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Faculty Advisor B. Tech 2018 Batch</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Sep 2018 - Aug 2022</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-4 px-4 text-sm font-medium text-gray-900 dark:text-white">10</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Member, Space Allocation Committee</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Jul 2019 - Jul 2020</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-4 px-4 text-sm font-medium text-gray-900 dark:text-white">11</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Lab Development Coordinator</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Jul 2011 - Jul 2013</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-4 px-4 text-sm font-medium text-gray-900 dark:text-white">12</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">CoE-ICT Coordinator</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Jul 2011 - Jul 2013</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-4 px-4 text-sm font-medium text-gray-900 dark:text-white">13</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Chairman, Innovation and Incubation Center</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Jul 2012 - Jan 2014</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-4 px-4 text-sm font-medium text-gray-900 dark:text-white">14</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Member of Institute Infrastructure Development</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Jul 2011 - Jun 2012</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-4 px-4 text-sm font-medium text-gray-900 dark:text-white">15</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Convocation Committee</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Jul 2013 - Jul 2013</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-4 px-4 text-sm font-medium text-gray-900 dark:text-white">16</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Member Sport Committee</td>
+                                            <td class="py-4 px-4 text-sm text-gray-500 dark:text-gray-400">Aug 2010 - Aug 2011</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Undergraduate Courses -->
+            <h3 class="text-xl font-semibold mb-2 mt-12">Undergraduate Courses</h3>
+            <ol class="list-decimal list-inside space-y-2">
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">System Analysis and Techniques</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Digital Signal Processing</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Speech Processing</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Machine Learning for Communication</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Introduction to Data Science</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">EE212 Circuit Theory</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">22004 Signals Systems and Network</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">11602 Programming and Data Structures</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">60701 Neuro Prostheses (Open elective)</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">EE617 Digital Signal Processing & Applications</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">EE660 Adaptive Signal Processing</li>
+            </ol>
+
+            <!-- Graduate Courses -->
+            <h3 class="text-xl font-semibold mt-6 mb-2">Graduate Courses</h3>
+            <ol class="list-decimal list-inside space-y-2">
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">60701 Neuro Prostheses (Open elective)</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">60704 Intelligent Instrumentation</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">70407 Communication and Networking Lab</li>
+            </ol>
+
+            <!-- Laboratory Courses -->
+            <h3 class="text-xl font-semibold mt-6 mb-2">Laboratory Courses</h3>
+            <ol class="list-decimal list-inside space-y-2">
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Basic Electrical Engineering</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Basic Electronics Engineering</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Intelligent Instrumentation</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">System Analysis and Techniques</li>
+            </ol>
+
+            
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-12 bg-gray-200 dark:bg-gray-800 py-4">
+        <div class="container mx-auto text-center text-gray-600 dark:text-gray-400">
+            <p>&copy; 2024 Dr. Sandeep Kumar Yadav. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

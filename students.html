@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Students - Dr. Sandeep Kumar Yadav</title>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.2.2/dist/cdn.min.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg fixed top-0 inset-x-0 z-10">
+        <div class="container mx-auto p-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-800">Dr. Sandeep K. Yadav</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-800 hover:text-blue-600">Home</a>
+                <a href="research.html" class="text-gray-800 hover:text-blue-600">Research</a>
+                <a href="teaching.html" class="text-gray-800 hover:text-blue-600">Teaching</a>
+                <a href="students.html" class="text-gray-800 hover:text-blue-600">Students</a>
+                <a href="awards.html" class="text-gray-800 hover:text-blue-600">Awards</a>
+                <a href="contact.html" class="text-gray-800 hover:text-blue-600">Contact</a>
+            </div>
+            <!-- Hamburger Menu -->
+            <div x-data="{ open: false }" class="md:hidden">
+                <button @click="open = !open" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <div x-show="open" @click.away="open = false" class="absolute left-0 w-full mt-2 bg-white shadow-lg z-20">
+                    <a href="index.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Home</a>
+                    <a href="research.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Research</a>
+                    <a href="teaching.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Teaching</a>
+                    <a href="students.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Students</a>
+                    <a href="awards.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Awards</a>
+                    <a href="contact.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Image Cards for Students -->
+    <div class="container mx-auto p-4 mt-16">
+        <h1 class="text-3xl font-bold mb-6">PhD Students</h1>
+
+        <h2 class="text-2xl font-semibold mb-4">Current</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            <!-- Student Card -->
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="surbhiGehlot.jpg" alt="Surbhi Gehlot" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Surbhi Gehlot</h3>
+                <p class="text-sm text-gray-600">PhD, pursuing</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="preetiMeena.png" alt="Preeti Meena" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Preeti Meena</h3>
+                <p class="text-sm text-gray-600">PhD, pursuing</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="amrikSingh.jpg" alt="Amrik Singh" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Amrik Singh</h3>
+                <p class="text-sm text-gray-600">PhD, pursuing</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="rajeshShukla.jpg" alt="Rajesh Shukla" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Rajesh Shukla</h3>
+                <p class="text-sm text-gray-600">PhD, pursuing</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="praveenChopra.jpg" alt="Praveen Chopra" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Praveen Chopra</h3>
+                <p class="text-sm text-gray-600">PhD, pursuing</p>
+                <p class="text-sm text-gray-600">Scientist at DRDO</p>
+            </div>
+        </div>
+        
+        <h2 class="text-2xl font-semibold mb-4">Completed</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            <!-- Student Card -->
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="shrivishalTripathi.jpg" alt="Dr. Shrivishal Tripathi" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Dr. Shrivishal Tripathi</h3>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="abhaySamant.jpg" alt="Dr. Abhay Samant" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Dr. Abhay Samant</h3>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="anujBharti.jpg" alt="Dr. Anuj Kumar Bharti" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Dr. Anuj Kumar Bharti</h3>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="gauravJajoo.jpg" alt="Dr. Gaurav Jajoo" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Dr. Gaurav Jajoo</h3>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="yogeshYadav.jpg" alt="Dr. Yogesh Yadav" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Dr. Yogesh Yadav</h3>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="mahmood.jpg" alt="Mr. Mahmood Shaik" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Mr. Mahmood Shaik</h3>
+            </div>
+        </div>
+
+        <h2 class="text-2xl font-semibold mb-4">Ex Project Members</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            <!-- Student Card -->
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="arpitGahlot.jpg" alt="Arpit Kumar Gahlot" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Arpit Kr. Gahlot</h3>
+                <p class="text-sm text-gray-600">Project Associate</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="surbhiGehlot.jpg" alt="Surbhi Gehlot" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Surbhi Gehlot</h3>
+                <p class="text-sm text-gray-600">PhD Student at IIT Jodhpur</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="vivekTiwari.jpg" alt="Vivek Tiwari" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Vivek Tiwari</h3>
+                <p class="text-sm text-gray-600">Ex Project Member</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="hershitBissa.jpg" alt="Hershit Bissa" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Hershit Bissa</h3>
+                <p class="text-sm text-gray-600">Software Engineer</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="deepak.jpg" alt="Deepak" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Deepak</h3>
+                <p class="text-sm text-gray-600">PhD Student at IIT Jodhpur</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="vaibhavBahuguna.jpg" alt="Vaibhav Bahuguna" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Vaibhav Bahuguna</h3>
+                <p class="text-sm text-gray-600">Employed at Dehradun</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="yogeshYadav.jpg" alt="Yogesh Yadav" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Yogesh Yadav</h3>
+                <p class="text-sm text-gray-600">PhD Student at IIT Jodhpur</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="supratim.jpg" alt="Supratim" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Supratim</h3>
+                <p class="text-sm text-gray-600">PhD Student at IIT Gandhinagar</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="kapilDixit.jpg" alt="Kapil Dixit" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Kapil Dixit</h3>
+                <p class="text-sm text-gray-600">Employed at Agra</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="sridattaAjgaonkar.jpg" alt="Sridatta Ajgaonkar" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Sridatta Ajgaonkar</h3>
+                <p class="text-sm text-gray-600">MS Student at Arizona State University, Arizona (USA)</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="avinashAnand.jpg" alt="Avinash Anand" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Avinash Anand</h3>
+                <p class="text-sm text-gray-600">Student at University of Texas</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="vivekAgarwal.jpg" alt="Vivek Agarwal" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Vivek Agarwal</h3>
+                <p class="text-sm text-gray-600">Consultant</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="shreyanshGang.jpg" alt="Shreyansh Gang" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Shreyansh Gang</h3>
+                <p class="text-sm text-gray-600">Consultant</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="amitGaurav.jpg" alt="Amit Gaurav" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Amit Gaurav</h3>
+                <p class="text-sm text-gray-600">Employed at HCL</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 text-center">
+                <img src="amiyaDixit.jpg" alt="Amiya Dixit" class="rounded-full mx-auto mb-2 max-w-32 max-h-32">
+                <h3 class="text-lg font-bold">Amiya Dixit</h3>
+                <p class="text-sm text-gray-600">Employed at IBM India</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- List of Students -->
+    <div class="container mx-auto p-4 mt-16">
+        <section id="courses-offered" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform transition-transform duration-300">
+            <h3 class="text-xl font-semibold mb-2 mt-12">M.Tech Students</h3>
+            <ol class="list-decimal list-inside space-y-2">
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Pragya Tiwari, 2024</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Rohith Jade, 2023</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Brahmanathkar Sarang Sanjay, 2022</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Dwikul Jyoti Das, 2021</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Dharamveer Yadav, 2021</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Aditya Ishwar Wasnik, 2021</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Rohav Vaidya, 2021</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Aniket Chaturvedi, 2018</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Sonal Joshi, 2017</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Priyanka Siddha, 2017</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Jitendar Kumar, 2017</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Chandrashekhar Bhardwaj, 2017</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Gaurav Jajoo, 2016</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Amit Gangwar, 2016</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Praveen Chopra, 2015</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Akshay Jain, 2015</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Shirish, 2014</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Shakti Gaurav, 2014</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Deepa, 2014</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Nagabhusan Eswara, 2013</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Saurabh Heda, 2013</li>
+            </ol>
+            
+            <h3 class="text-xl font-semibold mb-2 mt-12">Interns</h3>
+            <h4 class="font-semibold mt-4">Year 2015</h4>
+            <ol class="list-decimal list-inside space-y-2">
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Rajat (UG201211027)</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Mahendra Kachhawa (UG201213016)</li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Mamta Dhaka (UG201211019)</li>
+            </ol>
+            
+            <h3 class="text-xl font-semibold mb-2 mt-12">B.Tech Projects</h3>
+            <h4 class="font-semibold mt-4">Year 2011-12</h4>
+            <ol class="list-decimal list-inside space-y-2">
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                    Tarachand, Rajkumar, Akash Kumar - <span class="font-bold text-green-600"> ZigBee Transmitter and Receiver Design.</span> 
+                </li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                    Abhishek Kumar, Alok Verma - <span class="font-bold text-green-600"> Hamara Transmitter.</span>
+                </li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                    Narendra Choudhary, Rupal Khare, Kiran Kumar Masuram - <span class="font-bold text-green-600">Hamara Receiver.</span> 
+                </li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">
+                    Aditya Upadhyay, Amit Patel - <span class="font-bold text-green-600"> Cognitive Radio.</span> 
+                </li>
+            </ol>
+            
+            
+            <h4 class="font-semibold mt-4">Year 2012-13</h4>
+            <ol class="list-decimal list-inside space-y-2">
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Utkarsh Verma, Rahul Nahata, Gaurav Kumar - <span class="font-bold text-green-600">Signal Intelligence System for Blind Signal Demodulation.</span></li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Md. Aquibuddin, Md. Firoz, Jogendra Singh - <span class="font-bold text-green-600">Smart Meter Prototype.</span></li>
+                <li class="p-4 hover:bg-gray-100 rounded-lg transition-shadow duration-300">Saurabh Garg, Syed Faizul Hai, Sonal Gupta - <span class="font-bold text-green-600">Low Cost Wireless Surveillance System.</span></li>
+            </ol>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-12 bg-gray-200 dark:bg-gray-800 py-4">
+        <div class="container mx-auto text-center text-gray-600 dark:text-gray-400">
+            <p>&copy; 2024 Dr. Sandeep Kumar Yadav. All rights reserved.</p>
+        </div>
+    </footer>
+    
+
+</body>
+</html>
